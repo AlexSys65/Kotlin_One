@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_ratings">Rating</string>
+    <string name="title_list_one">Now Playing</string>
+    <string name="title_list_two">Upcoming</string>
+</resources>
