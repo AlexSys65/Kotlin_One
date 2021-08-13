@@ -12,9 +12,9 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/film_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            tools:srcCompat="@drawable/images_film" />
 
         <TextView
             android:id="@+id/movie_title"

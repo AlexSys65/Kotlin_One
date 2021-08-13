@@ -8,35 +8,61 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import ru.razuvaev.myapplication.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import ru.razuvaev.kotlin_one.model.Film
 import ru.razuvaev.myapplication.databinding.FragmentHomeBinding
+import java.util.ArrayList
 
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var textTitleOne: TextView
+    private lateinit var textTitleTwo: TextView
+    private lateinit var recViewOne: RecyclerView
+    private lateinit var recViewTwo: RecyclerView
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private lateinit var recyclerOneAdapter: RecyclerAdapterHomeOne
+    private lateinit var recyclerTwoAdapter: List<Film>
+
+
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textListOne
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+        textTitleOne = binding.textListOne
+        textTitleTwo = binding.textListTwo
+        recViewOne = binding.recyclerViewOne
+        recViewTwo = binding.recyclerViewTwo
+
+        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        homeViewModel.getFilmsMutableLiveData().observe(requireActivity(), filmsListUpdateObserver)
+
+        homeViewModel.textOne.observe(viewLifecycleOwner, {
+            textTitleOne.text = it
         })
+
+        homeViewModel.textTwo.observe(viewLifecycleOwner, {
+            textTitleTwo.text = it
+        })
+
         return root
     }
+
+    var filmsListUpdateObserver: Observer<List<Film>> =
+        Observer<List<Film>> { filmList ->
+            _binding?.recyclerViewOne?.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            _binding?.recyclerViewOne?.adapter = RecyclerAdapterHomeOne(requireContext(), filmList)
+        }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
