@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/margin_start">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
             android:id="@+id/film_icon"
             android:layout_width="@dimen/image_width"
             android:layout_height="@dimen/image_height"
-            tools:srcCompat="@drawable/images_film" />
+            app:srcCompat="@drawable/images_film" />
 
         <TextView
             android:id="@+id/movie_title"
@@ -32,7 +33,7 @@
 
             <TextView
                 android:id="@+id/film_year_text"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/year_width"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/button_text_size"
                 tools:text="2020       " />

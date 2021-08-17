@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ru.razuvaev.kotlin_one.model.Film
 import ru.razuvaev.myapplication.databinding.FragmentHomeBinding
-import java.util.ArrayList
+
 
 class HomeFragment : Fragment() {
 
@@ -21,10 +21,6 @@ class HomeFragment : Fragment() {
     private lateinit var textTitleTwo: TextView
     private lateinit var recViewOne: RecyclerView
     private lateinit var recViewTwo: RecyclerView
-
-    private lateinit var recyclerOneAdapter: RecyclerAdapterHomeOne
-    private lateinit var recyclerTwoAdapter: List<Film>
-
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -41,6 +37,11 @@ class HomeFragment : Fragment() {
         textTitleTwo = binding.textListTwo
         recViewOne = binding.recyclerViewOne
         recViewTwo = binding.recyclerViewTwo
+
+        recViewOne.run {
+            setHasFixedSize(true)
+
+        }
 
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         homeViewModel.getFilmsMutableLiveData().observe(requireActivity(), filmsListUpdateObserver)
@@ -60,7 +61,7 @@ class HomeFragment : Fragment() {
         Observer<List<Film>> { filmList ->
             _binding?.recyclerViewOne?.layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            _binding?.recyclerViewOne?.adapter = RecyclerAdapterHomeOne(requireContext(), filmList)
+            _binding?.recyclerViewOne?.adapter = RecyclerAdapterHomeOne(filmList)
         }
 
 

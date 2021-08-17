@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    tool:context="ru.razuvaev.kotlin_one.ui.home.detail.DetailFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/fragment_margin">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/details_move_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/title_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tool:text="Move Title" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/details_film_icon"
+        android:layout_width="@dimen/image_width"
+        android:layout_height="@dimen/image_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_move_title"
+        app:srcCompat="@drawable/images_film" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/details_film_genres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/detail_text_size"
+        android:layout_marginStart="@dimen/margin_start"
+        app:layout_constraintStart_toEndOf="@id/details_film_icon"
+        app:layout_constraintTop_toTopOf="@id/details_film_icon"
+        tool:text="genres of film" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/details_film_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/detail_text_size"
+        android:layout_marginStart="@dimen/margin_start"
+        app:layout_constraintStart_toEndOf="@id/details_film_icon"
+        app:layout_constraintTop_toBottomOf="@id/details_film_genres"
+        tool:text="Film duration: 117 min" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/details_film_vote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/detail_text_size"
+        android:layout_marginStart="@dimen/margin_start"
+        app:layout_constraintStart_toEndOf="@id/details_film_icon"
+        app:layout_constraintTop_toBottomOf="@id/details_film_duration"
+        tool:text="8.4 (22183) " />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/title_ratings"
+        app:layout_constraintStart_toEndOf="@id/details_film_vote"
+        app:layout_constraintTop_toBottomOf="@id/details_film_duration"
+        app:srcCompat="@drawable/ic_baseline_star_rate_24" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/details_film_budget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/detail_text_size"
+        android:layout_marginStart="@dimen/margin_start"
+        app:layout_constraintStart_toEndOf="@id/details_film_icon"
+        app:layout_constraintTop_toBottomOf="@id/details_film_vote"
+        tool:text="Budget: 90'000'000$" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/details_film_revenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/detail_text_size"
+        android:layout_marginStart="@dimen/margin_start"
+        app:layout_constraintStart_toEndOf="@id/details_film_icon"
+        app:layout_constraintTop_toBottomOf="@id/details_film_budget"
+        tool:text="Revenue: 190'000'000$" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/details_film_date"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_start"
+        android:textSize="@dimen/detail_text_size"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toEndOf="@id/details_film_icon"
+        app:layout_constraintTop_toBottomOf="@id/details_film_revenue"
+        tool:text="Release date: (1999-10-15)" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/details_film_overview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/detail_text_size"
+        android:layout_marginStart="@dimen/margin_start"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_film_icon"
+        tool:text="A ticking-time-bomb insomniac and a slippery soap salesman channel primal male
+            aggression into a shocking new form of therapy. Their concept catches on, with underground
+            FIGHT CLUBS forming in every town, until an eccentric gets in the way and ignites an
+            out-of-control spiral toward oblivion." />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

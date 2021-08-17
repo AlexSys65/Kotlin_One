@@ -27,17 +27,17 @@ class HomeViewModel : ViewModel(), FillAdapter {
     override fun getListFilms(): List<Film> {
         var data = mutableListOf<Film>()
         (0..5).forEach { _ -> data.add(Film(false,
-            "Comedy", "EN", "Fight Club", "8.4",
+            "Comedy", "EN", "Fight Club", "8.4", "22183",
             "/8kNruSfhk5IoE4eZOc4UpvDn6tq.jpg", " ticking-time-bomb insomniac and a slippery soap ...",
-            "1999-10-15")) }
+            "1999-10-15", "63000000", "100853753", "139")) }
         (6..10).forEach { _ -> data.add(Film(false,
-            "Drama", "EN", "Второй фильм", "8.4",
+            "Drama", "EN", "Второй фильм", "8.4", "22183",
             "/8kNruSfhk5IoE4eZOc4UpvDn6tq.jpg", " ticking-time-bomb insomniac and a slippery soap ...",
-            "1999-10-15")) }
+            "1999-10-15", "63000000", "100853753", "139")) }
         (11..16).forEach { _ -> data.add(Film(false,
-            "Detective", "EN", "Третий фильм", "8.4",
+            "Detective", "EN", "Третий фильм", "8.4", "22183",
             "/8kNruSfhk5IoE4eZOc4UpvDn6tq.jpg", " ticking-time-bomb insomniac and a slippery soap ...",
-            "1999-10-15")) }
+            "1999-10-15", "63000000", "100853753", "139")) }
         return data
     }
 }
