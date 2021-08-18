@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.razuvaev.kotlin_one.model.Film
 import ru.razuvaev.myapplication.R
 
-class RecyclerAdapterHomeOne(private val film: List<Film>) :
+class RecyclerAdapterHomeOne(private val listFilm: List<Film>) :
     RecyclerView.Adapter<RecyclerAdapterHomeOne.FilmViewHolder>() {
 
     inner class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,16 +38,16 @@ class RecyclerAdapterHomeOne(private val film: List<Film>) :
     }
 
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
-        holder.title?.text = film[position].original_title
+        holder.title?.text = listFilm[position].original_title
         holder.releaseYear?.text = substring(
-            film[position].release_date,
+            listFilm[position].release_date,
             0,
             4
         ) // TODO не нравится использование чисел. Подумать, как сделать гибче, если другой формат строки
-        holder.voteAverage?.text = film[position].vote_average
+        holder.voteAverage?.text = listFilm[position].vote_average
         //TODO здесь будет загрузка постера фильма
         holder.itemView.setOnClickListener {
-            val bundle = bundleOf("film" to film[position])
+            val bundle = bundleOf("film" to listFilm[position])
 
             Navigation.findNavController(holder.itemView).navigate(
                 R.id.action_navigation_home_to_navigation_detail, bundle
@@ -56,5 +56,5 @@ class RecyclerAdapterHomeOne(private val film: List<Film>) :
         }
     }
 
-    override fun getItemCount() = film.size
+    override fun getItemCount() = listFilm.size
 }

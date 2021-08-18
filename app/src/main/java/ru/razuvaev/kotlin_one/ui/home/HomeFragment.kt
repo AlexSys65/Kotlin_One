@@ -32,41 +32,38 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        textTitleOne = binding.textListOne
-        textTitleTwo = binding.textListTwo
-        recViewOne = binding.recyclerViewOne
-        recViewTwo = binding.recyclerViewTwo
-
+        binding.also {
+            textTitleOne = it.textListOne
+            textTitleTwo = it.textListTwo
+            recViewOne = it.recyclerViewOne
+            recViewTwo = it.recyclerViewTwo
+        }
         recViewOne.run {
             setHasFixedSize(true)
-
         }
 
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         homeViewModel.getFilmsMutableLiveData().observe(requireActivity(), filmsListUpdateObserver)
-
         homeViewModel.textOne.observe(viewLifecycleOwner, {
             textTitleOne.text = it
         })
-
         homeViewModel.textTwo.observe(viewLifecycleOwner, {
             textTitleTwo.text = it
         })
-
         return root
     }
 
-    var filmsListUpdateObserver: Observer<List<Film>> =
+    private var filmsListUpdateObserver: Observer<List<Film>> =
         Observer<List<Film>> { filmList ->
             _binding?.recyclerViewOne?.layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             _binding?.recyclerViewOne?.adapter = RecyclerAdapterHomeOne(filmList)
         }
 
-
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        _binding?.let {
+            _binding = null
+        }
     }
 }

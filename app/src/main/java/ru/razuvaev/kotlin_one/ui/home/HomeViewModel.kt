@@ -25,7 +25,7 @@ class HomeViewModel : ViewModel(), FillAdapter {
     }
 
     override fun getListFilms(): List<Film> {
-        var data = mutableListOf<Film>()
+        val data = mutableListOf<Film>()
         (0..5).forEach { _ -> data.add(Film(false,
             "Comedy", "EN", "Fight Club", "8.4", "22183",
             "/8kNruSfhk5IoE4eZOc4UpvDn6tq.jpg", " ticking-time-bomb insomniac and a slippery soap ...",
