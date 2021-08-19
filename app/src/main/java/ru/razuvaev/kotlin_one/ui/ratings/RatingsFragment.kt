@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
+import ru.razuvaev.myapplication.R
 import ru.razuvaev.myapplication.databinding.FragmentRatingsBinding
 
 class RatingsFragment : Fragment() {
@@ -14,8 +16,6 @@ class RatingsFragment : Fragment() {
     private lateinit var ratingsViewModel: RatingsViewModel
     private var _binding: FragmentRatingsBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -29,12 +29,17 @@ class RatingsFragment : Fragment() {
         _binding = FragmentRatingsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textRatings
+        val button: AppCompatButton = binding.btnRatings
         ratingsViewModel.text.observe(viewLifecycleOwner, {
-            textView.text = it
+            button.text = it
         })
+        button.setOnClickListener {
+            Snackbar.make(it, resources.getString(R.string.example_snack_bar), Snackbar.LENGTH_LONG).show()
+        }
         return root
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

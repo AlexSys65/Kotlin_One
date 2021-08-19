@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.razuvaev.kotlin_one.model.Film
+import ru.razuvaev.myapplication.R
 import ru.razuvaev.myapplication.databinding.FragmentDetailsFilmBinding
 
 class DetailFragment : Fragment() {
 
     private lateinit var film: Film
+    private val keyFilm = "film"
 
     private var _binding: FragmentDetailsFilmBinding? = null
     private val binding get() = _binding!!
@@ -21,7 +23,7 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentDetailsFilmBinding.inflate(inflater, container, false)
-        film = arguments?.getSerializable("film") as Film
+        film = arguments?.getSerializable(keyFilm) as Film
         return binding.root
     }
 
@@ -31,12 +33,12 @@ class DetailFragment : Fragment() {
             binding.also {
                 it.detailsMoveTitle.text = original_title
                 it.detailsFilmGenres.text = genres
-                it.detailsFilmDuration.text = String.format("Film duration: %s min", runTime)
+                it.detailsFilmDuration.text = String.format(resources.getString(R.string.duration), runTime)
                 it.detailsFilmVote.text =
-                    String.format("%s (%s) ", vote_average, vote_count)
-                it.detailsFilmBudget.text = String.format("Budget: %s$", budget)
-                it.detailsFilmRevenue.text = String.format("Revenue:  %s$", revenue)
-                it.detailsFilmDate.text = String.format("Release date: (%s)", release_date)
+                    String.format(resources.getString(R.string.vote), vote_average, vote_count)
+                it.detailsFilmBudget.text = String.format(resources.getString(R.string.budget), budget)
+                it.detailsFilmRevenue.text = String.format(resources.getString(R.string.revenue), revenue)
+                it.detailsFilmDate.text = String.format(resources.getString(R.string.release_date), release_date)
                 it.detailsFilmOverview.text = overview
             }
         }

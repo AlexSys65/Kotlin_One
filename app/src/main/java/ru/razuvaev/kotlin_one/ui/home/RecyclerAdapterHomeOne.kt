@@ -16,6 +16,8 @@ import ru.razuvaev.myapplication.R
 class RecyclerAdapterHomeOne(private val listFilm: List<Film>) :
     RecyclerView.Adapter<RecyclerAdapterHomeOne.FilmViewHolder>() {
 
+    private val keyFilm = "film"
+
     inner class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title: TextView? = null
         var releaseYear: TextView? = null
@@ -47,8 +49,7 @@ class RecyclerAdapterHomeOne(private val listFilm: List<Film>) :
         holder.voteAverage?.text = listFilm[position].vote_average
         //TODO здесь будет загрузка постера фильма
         holder.itemView.setOnClickListener {
-            val bundle = bundleOf("film" to listFilm[position])
-
+            val bundle = bundleOf(keyFilm to listFilm[position])
             Navigation.findNavController(holder.itemView).navigate(
                 R.id.action_navigation_home_to_navigation_detail, bundle
             )
