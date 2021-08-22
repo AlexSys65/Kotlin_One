@@ -7,4 +7,11 @@
     <string name="title_ratings">Rating</string>
     <string name="title_list_one">Now Playing</string>
     <string name="title_list_two">Upcoming</string>
+    <string name="duration">Film duration: %s min</string>
+    <string name="vote">%s (%s) </string>
+    <string name="budget">Budget: %s$</string>
+    <string name="revenue">Revenue:  %s$</string>
+    <string name="release_date">Release date: (%s)</string>
+    <string name="string_snack_bar">Press me</string>
+    <string name="example_snack_bar">Example message in SNACK BAR</string>
 </resources>

@@ -98,6 +98,7 @@
         android:id="@+id/details_film_overview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:minLines="4"
         android:textSize="@dimen/detail_text_size"
         android:layout_marginStart="@dimen/margin_start"
         android:inputType="textMultiLine"
