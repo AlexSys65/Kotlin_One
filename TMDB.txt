@@ -1,0 +1,15 @@
+Пример API запроса:
+https://api.themoviedb.org/3/movie/550?api_key=3a47cf7ff55dce626cfbe6238753474d
+
+Ключ доступа к API
+eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYTQ3Y2Y3ZmY1NWRjZTYyNmNmYmU2MjM4NzUzNDc0ZCIsInN1YiI6IjYwYTZjNDU2NjhiMWVhMDA0MDc3ZmEyYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3vicWsovIJrz1cYIk9gYlqsE9bb5qs-EabRH5apATQE
+
+&language=ru - язык
+https://api.themoviedb.org/3/search/movie?api_key=3a47cf7ff55dce626cfbe6238753474d&query=Jack+Reacher&language=ru
+https://api.themoviedb.org/3/search/movie?api_key=3a47cf7ff55dce626cfbe6238753474d&language=ru&genres[names]=comedy
+
+https://image.tmdb.org/t/p/w500/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg
+https://image.tmdb.org/t/p/w500/ohL4bIBXXCXc5WRT1eHESq0OQeW.jpg
+
+фон: 
+https://image.tmdb.org/t/p/w500//k7h4RNAarfOrF2r2YMN0P2FQSr4.jpg

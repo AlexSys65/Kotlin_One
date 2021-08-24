@@ -14,4 +14,5 @@
     <string name="release_date">Release date: (%s)</string>
     <string name="string_snack_bar">Press me</string>
     <string name="example_snack_bar">Example message in SNACK BAR</string>
+    <string name="films_not_found">Sorry, but no movies found ...</string>
 </resources>

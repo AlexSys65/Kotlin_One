@@ -36,7 +36,7 @@
                 android:layout_width="@dimen/year_width"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/button_text_size"
-                tools:text="2020       " />
+                tools:text="  2020      " />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
                 android:id="@+id/film_rating_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="end"
+                android:gravity="start"
                 android:textSize="@dimen/button_text_size"
                 tools:text="6.3" />
         </LinearLayout>
