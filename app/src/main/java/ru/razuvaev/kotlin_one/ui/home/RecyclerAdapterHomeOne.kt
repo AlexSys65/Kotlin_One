@@ -46,7 +46,7 @@ class RecyclerAdapterHomeOne(private val listFilm: List<Film>) :
             0,
             4
         ) // TODO не нравится использование чисел. Подумать, как сделать гибче, если другой формат строки
-        holder.voteAverage?.text = listFilm[position].vote_average
+        holder.voteAverage?.text = listFilm[position].vote_average.toString()
         //TODO здесь будет загрузка постера фильма
         holder.itemView.setOnClickListener {
             val bundle = bundleOf(keyFilm to listFilm[position])

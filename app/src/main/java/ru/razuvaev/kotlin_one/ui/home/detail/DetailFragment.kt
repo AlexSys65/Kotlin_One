@@ -32,7 +32,6 @@ class DetailFragment : Fragment() {
         with(film) {
             binding.also {
                 it.detailsMoveTitle.text = original_title
-                it.detailsFilmGenres.text = genres
                 it.detailsFilmDuration.text = String.format(resources.getString(R.string.duration), runTime)
                 it.detailsFilmVote.text =
                     String.format(resources.getString(R.string.vote), vote_average, vote_count)
