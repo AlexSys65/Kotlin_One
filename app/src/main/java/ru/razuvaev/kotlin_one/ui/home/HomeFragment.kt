@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ru.razuvaev.kotlin_one.model.Film
 import ru.razuvaev.myapplication.databinding.FragmentHomeBinding
+import java.util.ArrayList
 
 
 class HomeFragment : Fragment() {
@@ -21,6 +22,7 @@ class HomeFragment : Fragment() {
     private lateinit var textTitleTwo: TextView
     private lateinit var recViewOne: RecyclerView
     private lateinit var recViewTwo: RecyclerView
+    lateinit var recyclerViewAdapterOne: RecyclerAdapterHomeOne
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -44,6 +46,7 @@ class HomeFragment : Fragment() {
 
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         homeViewModel.getFilmsMutableLiveData().observe(requireActivity(), filmsListUpdateObserver)
+
         homeViewModel.textOne.observe(viewLifecycleOwner, {
             textTitleOne.text = it
         })
@@ -53,12 +56,25 @@ class HomeFragment : Fragment() {
         return root
     }
 
-    private var filmsListUpdateObserver: Observer<List<Film>> =
+   /* var filmsListUpdateObserver: Observer<List<Film>> =
         Observer<List<Film>> { filmList ->
+
             _binding?.recyclerViewOne?.layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             _binding?.recyclerViewOne?.adapter = RecyclerAdapterHomeOne(filmList)
+        }*/
+
+    var filmsListUpdateObserver: Observer<List<Film>> =
+        Observer<List<Film>> { filmsArrayList ->
+            recyclerViewAdapterOne = RecyclerAdapterHomeOne(filmsArrayList)
+            _binding?.recyclerViewOne?.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            _binding?.recyclerViewOne?.adapter = recyclerViewAdapterOne
         }
+
+
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

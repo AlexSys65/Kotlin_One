@@ -1,0 +1,49 @@
+// 20210823185321
+// https://api.themoviedb.org/3/search/movie?api_key=3a47cf7ff55dce626cfbe6238753474d&query=Jack+Reacher&language=ru
+
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/k7h4RNAarfOrF2r2YMN0P2FQSr4.jpg",
+      "genre_ids": [
+        80,
+        18,
+        53,
+        28
+      ],
+      "id": 75780,
+      "original_language": "en",
+      "original_title": "Jack Reacher",
+      "overview": "Снайпер убивает нескольких случайных прохожих. Его находят и арестовывают. Все улики указывают на него. На допросе вместо признания он пишет имя — Джек Ричер. Больше обвиняемый не может ничего сказать, поскольку после избиения заключёнными впадает в кому. Загадочный Джек Ричер появляется незамедлительно. Что теперь будет с убийцей?",
+      "popularity": 30.227,
+      "poster_path": "/qw1RGKZDasgyJIA4yUbaQxAgxD8.jpg",
+      "release_date": "2012-12-20",
+      "title": "Джек Ричер",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 5354
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ww1eIoywghjoMzRLRIcbJLuKnJH.jpg",
+      "genre_ids": [
+        28
+      ],
+      "id": 343611,
+      "original_language": "en",
+      "original_title": "Jack Reacher: Never Go Back",
+      "overview": "В центре сюжета Джек Ричер, отправившийся в Вирджинию, на место своей бывшей военной службы. Он встречается с женщиной, которая имела положение и вес в армии, однако как только они встретились — их арестовали. Причем Ричера обвинили в преступлении шестнадцатилетней давности, которое, разумеется тот не совершал.",
+      "popularity": 34.836,
+      "poster_path": "/u5Bl4EsRpe0gbb01OCA73NWePIy.jpg",
+      "release_date": "2016-10-19",
+      "title": "Джек Ричер 2: Никогда не возвращайся",
+      "video": false,
+      "vote_average": 5.8,
+      "vote_count": 3666
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 2
+}
