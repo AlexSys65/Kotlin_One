@@ -29,7 +29,6 @@ class HomeViewModel : ViewModel(), FillAdapter {
     private val handler = Handler(Looper.getMainLooper())
     var textOne: LiveData<String> = _textOne
     var textTwo: LiveData<String> = _textTwo
-    var recyclerOneAdapter: LiveData<List<Film>> = _recyclerViewOne
 
     fun getFilmsMutableLiveData(): MutableLiveData<List<Film>> {
         return _recyclerViewOne
@@ -47,7 +46,6 @@ class HomeViewModel : ViewModel(), FillAdapter {
                 } else {
                     handler.post {
                         Log.d("Log", "json $json")
-
                         try {
                             val gson = Gson()
                             val jsonList = json.getJSONArray("results")
